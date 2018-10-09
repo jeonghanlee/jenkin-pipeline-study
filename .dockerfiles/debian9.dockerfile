@@ -1,1 +1,1 @@
-FROM debian:9
+FROM debian:stretch

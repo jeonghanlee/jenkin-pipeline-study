@@ -23,6 +23,11 @@ pipeline {
           dir '.dockerfiles' } }
 	        steps { sh 'cat /etc/os-release' }
         }
+        stage('Debian10') {
+          agent { dockerfile { filename 'debian10.dockerfile'
+          dir '.dockerfiles' } }
+	        steps { sh 'cat /etc/os-release' }
+        }
         stage('ubuntu1404') {
           agent { dockerfile { filename 'ubuntu1404.dockerfile'
           dir '.dockerfiles' } }

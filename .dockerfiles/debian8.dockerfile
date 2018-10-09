@@ -1,1 +1,1 @@
-FROM debian:8
+FROM debian:jessie
