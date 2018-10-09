@@ -1,8 +1,10 @@
-node('docker') {
-    checkout scm
-    stage('Build') {
-      docker.image('maven:3.3.3').inside {
-        sh 'mvn --version'
+pipeline {
+   agent { dockerfile true }
+   stages {
+       stage('Test') {
+          steps {
+	     sh 'uname -ar'
+	  }
       }
-    }
-}	
+   }
+}
