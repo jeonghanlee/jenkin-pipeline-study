@@ -9,7 +9,7 @@ pipeline {
            steps { sh 'cat /etc/os-release' }
         }
         stage('Fedora28') {
-           agent { dockerfile { filename 'fedora28.dockerfile' 
+           agent { dockerfile { filename 'fedora28.dockerfile'
            dir '.dockerfiles' } }
            steps { sh 'cat /etc/os-release' }
         }
@@ -29,12 +29,12 @@ pipeline {
 	        steps { sh 'cat /etc/os-release' }
         }
         stage('ubuntu1604') {
-          agent { dockerfile { filename 'ubuntu1604'.dockerfile
+          agent { dockerfile { filename 'ubuntu1604.dockerfile'
           dir '.dockerfiles' } }
 	        steps { sh 'cat /etc/os-release' }
         }
         stage('ubuntu1804') {
-          agent { dockerfile { filename 'ubuntu1804'.dockerfile
+          agent { dockerfile { filename 'ubuntu1804.dockerfile'
           dir '.dockerfiles' } }
 	        steps { sh 'cat /etc/os-release' }
         }
