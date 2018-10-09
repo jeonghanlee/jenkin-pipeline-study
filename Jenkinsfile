@@ -6,7 +6,9 @@ pipeline {
         stage('CentOS7') {
            agent { dockerfile { filename 'centos7.dockerfile'
            dir '.dockerfiles' } }
-           steps { sh 'cat /etc/os-release' }
+           steps { sh 'cat /etc/os-release'
+	   sh '$PWD'	  
+	   }
         }
         stage('Fedora28') {
            agent { dockerfile { filename 'fedora28.dockerfile'
