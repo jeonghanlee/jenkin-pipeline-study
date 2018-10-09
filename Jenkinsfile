@@ -5,7 +5,7 @@ pipeline {
         agent {
 	   dockerfile {
               filename 'centos7.dockerfile'
-	      dir '.dockerfiles
+	      dir '.dockerfiles'
       	   }	      
         }
         steps {
@@ -16,7 +16,7 @@ pipeline {
         agent {
 	   dockerfile {
               filename 'debian9.dockerfile'
-	      dir '.dockerfiles
+	      dir '.dockerfiles'
       	   }	      
         }
 	steps {
