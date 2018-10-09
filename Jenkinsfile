@@ -1,7 +1,7 @@
 pipeline {
    agent none
    stages {
-      parallel {
+     stage('build') { parallel {
       stage('CentOS7') {
         agent {
 	   dockerfile {
@@ -24,6 +24,7 @@ pipeline {
 	  sh 'cat /etc/os-release'
 	}
      }
-   }
+    }
+    }
    }
 } 
