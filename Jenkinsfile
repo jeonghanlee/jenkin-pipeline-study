@@ -6,9 +6,13 @@ pipeline {
         stage('CentOS7') {
            agent { dockerfile { filename 'centos7.dockerfile'
            dir '.dockerfiles' } }
-           steps { sh 'cat /etc/os-release'
-	   sh 'echo $PWD'	  
-	   }
+           steps {
+             sh 'cat /etc/os-release'
+	           sh 'git clone https://github.com/icshwi/e3'
+             sh 'cd e3'
+             sh 'bash e3_builder_conf.bash -b "3.15.5" -t "${HOME}/epics" setup'
+             sh 'bash e3.bash base "y"'
+          }      
         }
         stage('Fedora28') {
            agent { dockerfile { filename 'fedora28.dockerfile'
