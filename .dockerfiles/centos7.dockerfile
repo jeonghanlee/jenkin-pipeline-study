@@ -1,3 +1,3 @@
 FROM centos:7
 
-RUN sudo apt install git make 
+RUN yum -y -q install git make 
